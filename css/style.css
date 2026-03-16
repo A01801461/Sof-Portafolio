@@ -221,6 +221,74 @@ img {
   margin-bottom: 2rem;
 }
 
+/* --- Grid 2×2 Variant (Propuesta A) --- */
+.grid-2x2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* --- Featured V2 — Project Sections (Propuesta B) --- */
+.featured-v2 {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 5rem 4rem;
+}
+
+.project-section {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.project-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 0;
+}
+
+.project-divider::before,
+.project-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #333333;
+}
+
+.project-divider-title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #cccccc;
+  white-space: nowrap;
+  transition: color 0.35s ease;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.project-images .grid-item {
+  aspect-ratio: 16 / 9;
+}
+
+/* Hover on entire project section (Featured B) */
+.project-section:hover .grid-item img {
+  transform: scale(1.03);
+  opacity: 0.7;
+}
+
+.project-section:hover .project-divider-title {
+  color: #ffffff;
+}
+
+/* Disable individual grid-item hover inside project sections */
+.project-section .grid-item:hover img {
+  transform: scale(1.03);
+  opacity: 0.7;
+}
+
 /* --- Footer --- */
 .site-footer {
   padding: 3rem;
@@ -311,5 +379,24 @@ img {
   .about-text-container .page-title,
   .about-text-container .page-text {
     text-align: center !important;
+  }
+
+  /* Grid 2×2 single column on mobile */
+  .grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Featured V2 responsive */
+  .featured-v2 {
+    padding: 0 1rem 2rem;
+  }
+
+  .project-images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-divider {
+    padding: 1.5rem 0;
   }
 }
