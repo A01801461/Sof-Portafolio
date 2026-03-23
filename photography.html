@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photography by Sofía Abud — Colecciones fotográficas.">
+    <title>Photography — Sofía Abud</title>
+    <link rel="stylesheet" href="css/style.css?v=4">
+</head>
+
+<body>
+
+    <!-- ─── Top Bar ─── -->
+    <header class="site-header">
+        <h1 class="site-name">Sofía Abud</h1>
+
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">cinematography</a></li>
+                <li><a href="photography.html" class="active">Photography</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ─── Photography Collections ─── -->
+    <main class="photo-page">
+        <h2 class="photo-page-title">Photography</h2>
+
+        <section class="photo-grid">
+
+            <!-- Collection 1: Vertical cover (tall) -->
+            <article class="photo-item photo-item--tall">
+                <img src="assets/cinematography/FM/FM5.jpg" alt="Collection 1 Cover" loading="lazy">
+                <div class="photo-overlay">
+                    <span class="photo-overlay-title">Collection One</span>
+                </div>
+            </article>
+
+            <!-- Collection 2: Horizontal cover (wide) -->
+            <article class="photo-item photo-item--wide">
+                <img src="assets/cinematography/AC/AC5.jpg" alt="Collection 2 Cover" loading="lazy">
+                <div class="photo-overlay">
+                    <span class="photo-overlay-title">Collection Two</span>
+                </div>
+            </article>
+
+            <!--
+                To add more collections, use these modifiers:
+                - photo-item             → standard square cell
+                - photo-item--tall       → vertical cover (spans 2 rows)
+                - photo-item--wide       → horizontal cover (spans 2 columns)
+                
+                The CSS Grid auto-flow dense algorithm fills gaps automatically,
+                so any combination of sizes will produce a balanced, intentional layout.
+            -->
+
+        </section>
+    </main>
+
+    <!-- ─── Footer ─── -->
+    <footer class="site-footer">
+        &copy; 2026 Sofía Abud. All rights reserved.
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
