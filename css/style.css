@@ -191,7 +191,7 @@ img {
 .about-layout {
   display: flex;
   gap: 4rem;
-  align-items: center;
+  align-items: flex-start; /* enables sticky on child */
   max-width: 1000px;
   text-align: left;
 }
@@ -199,10 +199,18 @@ img {
 .about-image {
   flex: 1;
   min-width: 300px;
+  position: sticky;
+  top: 10rem; /* below header */
+  align-self: flex-start;
 }
 
 .about-text-container {
   flex: 1.5;
+}
+
+.about-title,
+.about-text {
+  text-align: left;
 }
 
 .page-title {
@@ -219,6 +227,72 @@ img {
   color: #cccccc;
   line-height: 1.8;
   margin-bottom: 2rem;
+}
+
+/* --- Contact Link — Option A: Minimal Underline --- */
+.contact-link {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.contact-link--minimal {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.contact-link--minimal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform-origin: left;
+}
+
+.contact-link--minimal:hover::after {
+  background-color: #fff;
+  transform: scaleX(1.05);
+}
+
+.contact-link--minimal:hover {
+  color: #ffffff;
+}
+
+/* --- Contact Link — Option B: CTA Button --- */
+.contact-link--cta {
+  padding: 0.75rem 2rem;
+  border: 1px solid #555;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.contact-link--cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.contact-link--cta:hover {
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.contact-link--cta:hover::before {
+  transform: scaleX(1);
 }
 
 /* --- Grid 2×2 Variant (Propuesta A) --- */
@@ -287,6 +361,179 @@ img {
 .project-section .grid-item:hover img {
   transform: scale(1.03);
   opacity: 0.7;
+}
+
+/* --- Grid Link (wraps grid-item content in an anchor) --- */
+.grid-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.grid-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Project Detail Pages --- */
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.project-hero {
+  margin-bottom: 2rem;
+}
+
+.project-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-trailer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #111;
+  object-fit: contain;
+}
+
+.project-info {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.project-detail-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.project-meta-divider {
+  color: #444;
+}
+
+.project-stills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-stills img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.project-back {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.project-back:hover {
+  color: #ffffff;
+}
+
+/* --- Photography Page --- */
+.photo-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.photo-page-title {
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 280px;
+  grid-auto-flow: dense;
+  gap: 1rem;
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #111;
+  cursor: pointer;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.03);
+  opacity: 0.75;
+}
+
+.photo-item .photo-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 60%);
+  pointer-events: none;
+}
+
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo-overlay-title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Tall cover (vertical) — spans 2 rows */
+.photo-item--tall {
+  grid-row: span 2;
+}
+
+/* Wide cover (horizontal) — spans 2 columns */
+.photo-item--wide {
+  grid-column: span 2;
 }
 
 /* --- Footer --- */
@@ -376,9 +623,17 @@ img {
     text-align: center;
   }
 
-  .about-text-container .page-title,
-  .about-text-container .page-text {
-    text-align: center !important;
+  .about-image {
+    position: static; /* disable sticky on mobile */
+  }
+
+  .about-title,
+  .about-text {
+    text-align: center;
+  }
+
+  .contact-link {
+    margin: 0 auto;
   }
 
   /* Grid 2×2 single column on mobile */
@@ -398,5 +653,42 @@ img {
 
   .project-divider {
     padding: 1.5rem 0;
+  }
+
+  /* Project detail responsive */
+  .project-detail {
+    padding: 0 1rem 2rem;
+  }
+
+  .project-stills {
+    grid-template-columns: 1fr;
+  }
+
+  .project-back {
+    display: block;
+    text-align: center;
+  }
+
+  /* Photography responsive */
+  .photo-page {
+    padding: 0 1rem 2rem;
+  }
+
+  .photo-page-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+
+  .photo-item--tall {
+    grid-row: span 1;
+  }
+
+  .photo-item--wide {
+    grid-column: span 1;
   }
 }

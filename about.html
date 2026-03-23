@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sobre Sofía Abud — Artista, fotógrafa y músico.">
     <title>About — Sofía Abud</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 
 <body>
@@ -23,10 +23,10 @@
 
         <nav class="site-nav">
             <ul class="nav-list">
-                <li><a href="index.html" class="active">cinematography</a></li>
-                <li><a href="#">Photography</a></li>
+                <li><a href="index.html">cinematography</a></li>
+                <li><a href="photography.html">Photography</a></li>
                 <li><a href="#">Music</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="active">About</a></li>
             </ul>
         </nav>
     </header>
@@ -37,21 +37,26 @@
             <img src="assets/sofia.jpg" alt="Retrato de Sofía Abud">
         </div>
         <div class="about-text-container">
-            <h2 class="page-title" style="text-align: left;">About me</h2>
-            <p class="page-text" style="text-align: left;">
+            <h2 class="page-title about-title">About me</h2>
+            <p class="page-text about-text">
                 Sofia Abud is a Mexican cinematographer and photographer based in Toronto.
             </p>
-            <p class="page-text" style="text-align: left;">
+            <p class="page-text about-text">
                 Her work is rooted in an intimate exploration of the human experience, creating images that delve into themes of identity,
                 belonging, heritage, and memory. She is often inspired by everyday moments that shape how we see ourselves and the world around us.
                 Sofia enjoys working closely with other artists to bring meaningful stories to life, adapting her visual and stylistic approach to each project's needs.
             </p>
-            <p class="page-text" style="text-align: left;">
+            <p class="page-text about-text">
                 Sofia is equally drawn to music as a powerful storytelling tool. She composes immersive soundscapes for film, 
                 exploring the union of visuals and audio as an opportunity to create layered, transformative experiences.
             </p>
-            <p class="page-text" style="text-align: left;">Lets connect!</p>
-            <p class="page-text" style="text-align: left;">sofiaabud@gmail.com</p>
+            <p class="page-text about-text">Lets connect!</p>
+
+            <!-- Option A: Minimal underline link (active by default) -->
+            <a href="mailto:sofiaabud@gmail.com" class="contact-link contact-link--minimal">sofiaabud@gmail.com</a>
+
+            <!-- Option B: Visual CTA button (uncomment this and comment Option A to switch) -->
+            <!-- <a href="mailto:sofiaabud@gmail.com" class="contact-link contact-link--cta">sofiaabud@gmail.com</a> -->
         </div>
     </main>
 
