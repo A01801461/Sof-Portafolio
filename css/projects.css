@@ -1,0 +1,105 @@
+/* ================================================
+   Sofía Abud — Project Details Stylesheet
+   ================================================ */
+
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.project-hero {
+  margin-bottom: 2rem;
+}
+.project-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.project-trailer {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #111;
+  object-fit: contain;
+}
+
+.project-info {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.project-detail-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta-desc {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.project-meta-credits {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: #888888;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.project-stills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-stills img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+/* 4:3 Aspect Ratio override */
+.project-stills.stills-4-3 img {
+  aspect-ratio: 4 / 3;
+}
+
+.project-back {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.project-back:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 0 1rem 2rem;
+  }
+  .project-stills {
+    grid-template-columns: 1fr;
+  }
+  .project-back {
+    display: block;
+    text-align: center;
+  }
+}
