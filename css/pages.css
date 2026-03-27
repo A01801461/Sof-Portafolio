@@ -1,0 +1,128 @@
+/* ================================================
+   Sofía Abud — Extra Pages Stylesheet
+   ================================================ */
+
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-layout {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  position: sticky;
+  top: 10rem;
+  align-self: flex-start;
+}
+
+.about-text-container {
+  flex: 1.5;
+}
+
+.about-title,
+.about-text {
+  text-align: left;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.page-text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #cccccc;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-link {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.contact-link--minimal {
+  position: relative;
+  padding-bottom: 2px;
+}
+.contact-link--minimal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform-origin: left;
+}
+.contact-link--minimal:hover::after {
+  background-color: #fff;
+  transform: scaleX(1.05);
+}
+.contact-link--minimal:hover {
+  color: #ffffff;
+}
+
+.contact-link--cta {
+  padding: 0.75rem 2rem;
+  border: 1px solid #555;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+.contact-link--cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.contact-link--cta:hover {
+  color: #000000;
+  border-color: #ffffff;
+}
+.contact-link--cta:hover::before {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .about-image {
+    position: static;
+  }
+  .about-title,
+  .about-text {
+    text-align: center;
+  }
+  .contact-link {
+    margin: 0 auto;
+  }
+}
