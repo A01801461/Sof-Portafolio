@@ -34,15 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  // Seleccionar tanto el hero como los stills (si existen en la página)
-  const animatableImages = document.querySelectorAll('.project-stills img, .project-hero-img');
+  // Seleccionar tanto el hero como los stills y galerías de fotografía (si existen en la página)
+  const animatableImages = document.querySelectorAll('.project-stills img, .project-hero-img, .collection-gallery img');
   animatableImages.forEach(img => {
-    img.classList.add('scroll-reveal'); // Agregar clase base
+    if (!img.classList.contains('scroll-reveal')) {
+      img.classList.add('scroll-reveal'); // Agregar clase base
+    }
     observer.observe(img);
   });
 
   // --- 2. Lightbox Functionality ---
-  const stills = document.querySelectorAll('.project-stills img'); // Lightbox solo en los stills
+  const stills = document.querySelectorAll('.project-stills img, .collection-gallery img');
   
   if (stills.length > 0) {
     // Crear el overlay
