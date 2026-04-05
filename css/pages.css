@@ -164,6 +164,6 @@
   }
 
   .contact-buttons {
-    align-items: center;
+    align-items: flex-start;
   }
 }
