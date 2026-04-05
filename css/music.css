@@ -1,0 +1,82 @@
+/* ================================================
+   Sofía Abud — Music Stylesheet
+   ================================================ */
+
+/* --- Music Page Title (mobile only, same pattern as photo/cine) --- */
+.music-page-title {
+  display: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+
+/* --- Audio Track List --- */
+.music-tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #222;
+}
+
+.track-item:first-child {
+  border-top: 1px solid #222;
+}
+
+.track-name {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cccccc;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Custom Audio Player Styling --- */
+.track-item audio {
+  flex: 1;
+  max-width: 500px;
+  height: 36px;
+  filter: invert(1);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.track-item audio:hover,
+.track-item audio:focus {
+  opacity: 1;
+}
+
+/* --- Responsive — Mobile --- */
+@media (max-width: 768px) {
+  .music-page-title {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .track-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem 0;
+  }
+
+  .track-item audio {
+    width: 100%;
+    max-width: 100%;
+  }
+}
