@@ -13,28 +13,52 @@
   display: flex;
   gap: 4rem;
   align-items: flex-start;
-  max-width: 1000px;
+  max-width: 1100px;
   text-align: left;
 }
 
 .about-image {
-  flex: 1;
-  min-width: 300px;
+  flex: 1.5;
+  min-width: 500px;
   position: sticky;
   top: 10rem;
   align-self: flex-start;
 }
 
 .about-text-container {
-  flex: 1.5;
+  flex: 1;
 }
 
-.about-title,
-.about-text {
+.about-title {
   text-align: left;
 }
 
+.about-text {
+  text-align: justify;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.icon-ig {
+  stroke: currentColor;
+  transform: translateY(3px);
+}
+
 .page-title {
+  display: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 0.15em;
@@ -63,6 +87,7 @@
   position: relative;
   padding-bottom: 2px;
 }
+
 .contact-link--minimal::after {
   content: '';
   position: absolute;
@@ -74,10 +99,12 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
   transform-origin: left;
 }
+
 .contact-link--minimal:hover::after {
   background-color: #fff;
   transform: scaleX(1.05);
 }
+
 .contact-link--minimal:hover {
   color: #ffffff;
 }
@@ -90,6 +117,7 @@
   z-index: 1;
   transition: color 0.4s ease, border-color 0.4s ease;
 }
+
 .contact-link--cta::before {
   content: '';
   position: absolute;
@@ -100,10 +128,12 @@
   transform-origin: left;
   transition: transform 0.4s ease;
 }
+
 .contact-link--cta:hover {
   color: #000000;
   border-color: #ffffff;
 }
+
 .contact-link--cta:hover::before {
   transform: scaleX(1);
 }
@@ -115,14 +145,25 @@
     padding: 2rem 1rem;
     text-align: center;
   }
+
+  .page-title {
+    display: block;
+  }
+
   .about-image {
     position: static;
+    min-width: 350px;
   }
-  .about-title,
-  .about-text {
+
+  .about-title {
     text-align: center;
   }
+
   .contact-link {
     margin: 0 auto;
+  }
+
+  .contact-buttons {
+    align-items: center;
   }
 }

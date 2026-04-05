@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 2. Lightbox Functionality ---
   const stills = document.querySelectorAll('.project-stills img, .collection-gallery img');
-  
+
   if (stills.length > 0) {
     // Crear el overlay
     const lightboxOverlay = document.createElement('div');
@@ -90,13 +90,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightboxOverlay.addEventListener('click', (e) => {
       if (e.target === lightboxOverlay) {
-         closeLightbox();
+        closeLightbox();
       }
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
         closeLightbox();
+      }
+    });
+  }
+
+  // --- 3. Clipboard copy for mailto link fallback ---
+  const emailBtn = document.getElementById('email-btn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', (e) => {
+      const emailTextSpan = document.getElementById('email-text');
+      if (emailTextSpan && navigator.clipboard) {
+        const originalText = emailTextSpan.innerText;
+        navigator.clipboard.writeText('sofiaabud@gmail.com').then(() => {
+          emailTextSpan.innerText = "Copied to clipboard!";
+          setTimeout(() => {
+            emailTextSpan.innerText = originalText;
+          }, 2000);
+        }).catch(err => {
+          console.error("No se pudo copiar al portapapeles:", err);
+        });
       }
     });
   }
