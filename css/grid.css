@@ -128,7 +128,10 @@
   margin: 0 auto;
   padding: 0 2rem 4rem;
 }
-.photo-page-title {
+.photo-page-title,
+.cinematography-title {
+  display: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.6rem;
   font-weight: 300;
   letter-spacing: 0.2em;
@@ -208,7 +211,9 @@
   .photo-page {
     padding: 0 1rem 2rem;
   }
-  .photo-page-title {
+  .photo-page-title,
+  .cinematography-title {
+    display: block;
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }

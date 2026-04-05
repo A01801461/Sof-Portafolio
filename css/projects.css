@@ -11,11 +11,13 @@
 .project-hero {
   margin-bottom: 2rem;
 }
+
 .project-hero-img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
 .project-trailer {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -32,6 +34,7 @@
 }
 
 .project-detail-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.2em;
@@ -95,9 +98,11 @@
   .project-detail {
     padding: 0 1rem 2rem;
   }
+
   .project-stills {
     grid-template-columns: 1fr;
   }
+
   .project-back {
     display: block;
     text-align: center;
@@ -172,4 +177,3 @@
 .lightbox-close:hover {
   color: #ccc;
 }
-
