@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stills.forEach(img => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
+        lightboxImg.src = img.dataset.highRes || img.src;
         lightboxImg.alt = img.alt;
         lightboxOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevenir scroll al abrir
