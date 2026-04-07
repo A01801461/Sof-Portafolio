@@ -7,16 +7,16 @@ ASSETS_DIR = "./assets"
 OUTPUT_STD_DIR = "./assets/img/std"
 OUTPUT_HIGH_DIR = "./assets/img/high"
 
-QUALITY_STD = 80
-QUALITY_HIGH = 92
+QUALITY_STD = 85
+QUALITY_HIGH = 95
 # Carpetas originales a ignorar internamente
-# Ej. si se requiere en el futuro
 IGNORE_DIRS = ['assets\\img', 'assets/img']
 
 def process_and_convert_to_webp(directory):
     for root, dirs, files in os.walk(directory):
         # Ignorar si estamos dentro la carpeta de output previamente creada
-        if 'img/std' in root.replace('\\', '/') or 'img/high' in root.replace('\\', '/'):
+        root_normalized = root.replace('\\', '/')
+        if 'img/std' in root_normalized or 'img/high' in root_normalized:
             continue
             
         for file in files:
@@ -28,6 +28,13 @@ def process_and_convert_to_webp(directory):
                 rel_path = os.path.relpath(root, ASSETS_DIR)
                 if rel_path == '.':
                     rel_path = ''
+                
+                # Si viene de unprocessed, lo mapeamos a photography
+                rel_parts = rel_path.split(os.sep)
+                if len(rel_parts) > 0 and rel_parts[0] == 'unprocessed':
+                    # remove 'unprocessed' and prepend 'photography'
+                    rel_parts[0] = 'photography'
+                    rel_path = os.path.join(*rel_parts)
                 
                 # Excepciones
                 # "2M" folder ignorado en caso de video, pero si hay imagen (poster) se procede.
@@ -46,29 +53,48 @@ def process_and_convert_to_webp(directory):
                 
                 try:
                     with Image.open(filepath) as img:
+                        # Convertir a RGB por si acaso
+                        if img.mode in ("RGBA", "P"):
+                            img = img.convert("RGB")
+                            
                         width, height = img.size
+                        is_horizontal = width > height
                         
-                        # Guardar High-Res (Original size, High Quality)
-                        img.save(high_filepath, "WEBP", quality=QUALITY_HIGH, optimize=True)
+                        # Tamaños máximos dependiendo de la orientación
+                        high_size = (2850, 1911) if is_horizontal else (1911, 2850)
+                        std_size = (955, 425) if is_horizontal else (425, 955)
                         
-                        # Generar Std-Res
+                        # Generar y guardar High-Res
+                        high_img = img.copy()
+                        high_img.thumbnail(high_size, Image.Resampling.LANCZOS)
+                        high_img.save(high_filepath, "WEBP", quality=QUALITY_HIGH, optimize=True)
+                        
+                        # Generar y guardar Std-Res
+                        std_img = img.copy()
                         if is_a_choice:
-                            # Según las reglas, A Choice no se reduce la resolución
-                            resized_img = img
+                            # Según las reglas previas, A Choice no se reduce la resolución (aunque lo generamos igual)
+                            pass
                         else:
-                            # 1/4 area (width/2, height/2)
-                            new_size = (width // 2, height // 2)
-                            resized_img = img.resize(new_size, Image.Resampling.LANCZOS)
-                        
-                        # Guardar Std-Res (Low Quality/Balanced)
-                        resized_img.save(std_filepath, "WEBP", quality=QUALITY_STD, optimize=True)
+                            # thumbnail no agranda la imagen si ya es más pequeña que std_size
+                            std_img.thumbnail(std_size, Image.Resampling.LANCZOS)
+                            
+                        std_img.save(std_filepath, "WEBP", quality=QUALITY_STD, optimize=True)
                         
                     # Borrar el archivo original
                     os.remove(filepath)
-                    print(f"✨ Procesado: {file} -> std/high (.webp)")
+                    print(f"✨ Procesado: {file} -> std/high (.webp) en {rel_path}")
                         
                 except Exception as e:
                     print(f"❌ Error con {file}: {e}")
+
+    # Al finalizar, borramos la carpeta unprocessed si existe y esta vacía o solo contiene subcarpetas vacías
+    unprocessed_dir = os.path.join(ASSETS_DIR, 'unprocessed')
+    if os.path.exists(unprocessed_dir):
+        try:
+            shutil.rmtree(unprocessed_dir)
+            print(f"🗑️ Carpeta original {unprocessed_dir} eliminada.")
+        except Exception as e:
+            print(f"❌ No se pudo eliminar la carpeta {unprocessed_dir}: {e}")
 
 if __name__ == "__main__":
     print("🚀 Optimizando portafolio de Sofía Abud (Doble Resolución WebP)...")
