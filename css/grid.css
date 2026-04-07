@@ -141,13 +141,13 @@
 }
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
 .photo-item {
   position: relative;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   background-color: #111;
   cursor: pointer;
