@@ -104,6 +104,10 @@
     gap: 3px;
   }
 
+  .project-detail-title {
+    font-size: 1.1rem;
+  }
+
   .project-back {
     display: block;
     text-align: center;

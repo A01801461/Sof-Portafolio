@@ -26,6 +26,15 @@
   margin-bottom: 0.5rem;
 }
 
+.collection-description {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
 .collection-subtitle {
   font-size: 0.8rem;
   font-weight: 300;
@@ -91,7 +100,7 @@
   }
 
   .collection-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .collection-gallery {
