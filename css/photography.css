@@ -51,7 +51,9 @@
 
 .collection-gallery img {
   width: 100%;
+  height: auto;
   display: block;
+  break-inside: avoid;
   margin-bottom: 1rem;
   cursor: zoom-in;
   transition: transform 0.5s ease, opacity 0.3s ease;
@@ -63,13 +65,18 @@
 
 /* Aspect ratios — film photography */
 .collection-gallery img.horizontal {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 2 !important;
   object-fit: cover;
 }
 
 .collection-gallery img.vertical {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 2 / 3 !important;
   object-fit: cover;
+}
+
+/* Secondary aspect ratio for specific collections (Casa de los Abuelos, etc.) */
+.collection-gallery.alt-ratio img.vertical {
+  aspect-ratio: 3 / 4 !important;
 }
 
 /* --- Back Link --- */
