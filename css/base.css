@@ -26,6 +26,17 @@ body {
   min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4,
+.serif-title {
+  font-family: 'Gambetta-Variable', serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;

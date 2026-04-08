@@ -18,11 +18,11 @@
 }
 
 .collection-title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: 'Gambetta-Variable', serif;
+  font-size: 2.22rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
   margin-bottom: 0.5rem;
 }
 
@@ -36,11 +36,11 @@
 }
 
 .collection-subtitle {
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   color: #888;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 /* --- Masonry Gallery (CSS Columns) --- */
@@ -76,10 +76,10 @@
 .collection-back {
   display: inline-block;
   margin-top: 3rem;
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
   color: #888;
   transition: color 0.3s ease;
 }
@@ -100,7 +100,7 @@
   }
 
   .collection-title {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 
   .collection-gallery {

@@ -16,11 +16,11 @@
 }
 
 .site-name {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+  font-family: 'Gambetta-Variable', serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
   color: #ffffff;
   white-space: nowrap;
 }
@@ -33,14 +33,15 @@
 
 .nav-list {
   display: flex;
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .nav-list a {
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: 'Gambetta-Variable', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
   color: #cccccc;
   transition: color 0.25s ease;
   position: relative;
@@ -102,13 +103,16 @@
     justify-content: space-between;
     padding: 1.25rem 1.5rem;
   }
+
   .site-name {
-    font-size: 1.3rem;
-    letter-spacing: 0.25em;
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
   }
+
   .nav-toggle {
     display: block;
   }
+
   .site-nav {
     position: fixed;
     top: 0;
@@ -122,24 +126,30 @@
     transition: right 0.4s ease;
     z-index: 150;
   }
+
   body.nav-open .site-nav {
     right: 0;
   }
+
   .nav-list {
     flex-direction: column;
     align-items: center;
     gap: 2.5rem;
   }
+
   .nav-list a {
-    font-size: 1rem;
-    letter-spacing: 0.3em;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
   }
+
   body.nav-open .nav-toggle span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
+
   body.nav-open .nav-toggle span:nth-child(2) {
     opacity: 0;
   }
+
   body.nav-open .nav-toggle span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }

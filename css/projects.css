@@ -40,28 +40,28 @@
 }
 
 .project-detail-title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 2.2rem;
-  font-weight: 300;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-family: 'Gambetta-Variable', serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
   margin-bottom: 1rem;
 }
 
 .project-meta-desc {
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
   color: #aaaaaa;
   margin-bottom: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .project-meta-credits {
-  font-size: 0.75rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   color: #888888;
-  text-transform: uppercase;
+  text-transform: none;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -88,10 +88,10 @@
 .project-back {
   display: inline-block;
   margin-top: 3rem;
-  font-size: 0.8rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: none;
   color: #888;
   transition: color 0.3s ease;
 }
@@ -115,7 +115,7 @@
   }
 
   .project-detail-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
   }
 
