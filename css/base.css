@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent-color: #888888;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;

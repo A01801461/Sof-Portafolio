@@ -3,6 +3,11 @@
    ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // --- 0. Dynamic Color Scheme ---
+  const accentColors = ['#4A5A46', '#6F7555', '#6B5448', '#87A19E', '#335765', '#8D623E'];
+  const randomColor = accentColors[Math.floor(Math.random() * accentColors.length)];
+  document.documentElement.style.setProperty('--accent-color', randomColor);
+
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelectorAll('.nav-list a');
 
