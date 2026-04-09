@@ -42,19 +42,23 @@
 .project-images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 0;
 }
 
 .project-images .grid-item {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background-color: #111111;
+  background-color: #000000;
 }
 
-/* Specific aspect ratio for 2 Minutes */
+/* Specific aspect ratio handling for 2 Minutes (4:3 source in 16:9 container) */
 .project-section.ratio-4-3 .grid-item {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
+}
+
+.project-section.ratio-4-3 .grid-item img {
+  object-fit: contain;
 }
 
 .project-images .grid-item img {
@@ -81,7 +85,7 @@
 
   .project-images {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0;
   }
 
   .project-divider {
