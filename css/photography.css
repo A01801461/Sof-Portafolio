@@ -14,7 +14,7 @@
   text-align: center;
   padding: 3rem 0;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .collection-title {
@@ -32,7 +32,7 @@
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.6;
-  color: #cccccc;
+  color: #444444;
 }
 
 .collection-subtitle {
@@ -92,7 +92,7 @@
 }
 
 .collection-back:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 /* --- Responsive — Mobile --- */
