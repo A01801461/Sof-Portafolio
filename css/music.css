@@ -8,10 +8,11 @@
   font-family: 'Gambetta', serif;
   font-size: 1.8rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: none;
   text-align: center;
   margin-bottom: 3rem;
+  color: #525252;
 }
 
 
@@ -65,6 +66,7 @@
     display: block;
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    letter-spacing: 0.08em;
   }
 
   .track-item {

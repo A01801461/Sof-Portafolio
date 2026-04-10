@@ -44,27 +44,30 @@
   font-size: 2.5rem;
   font-weight: 500;
   letter-spacing: 0.12em;
-  text-transform: none;
+  text-transform: uppercase;
   margin-bottom: 1rem;
+  color: var(--accent-color);
 }
 
 .project-meta-desc {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   letter-spacing: 0.12em;
-  color: #aaaaaa;
+  color: #313131;
   margin-bottom: 0;
   text-transform: none;
+  font-weight: 500;
 }
 
 .project-meta-credits {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
-  color: #888888;
+  color: #525252;
   text-transform: none;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  line-height: 1.8;
 }
 
 .project-stills {
@@ -110,8 +113,8 @@
   }
 
   .project-stills {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .project-detail-title {
@@ -120,7 +123,11 @@
   }
 
   .project-meta-desc {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .project-meta-credits {
+    font-size: 0.9rem;
   }
 
   .project-back {
