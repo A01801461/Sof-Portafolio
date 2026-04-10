@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   // Seleccionar tanto el hero como los stills y galerías de fotografía (si existen en la página)
-  const animatableImages = document.querySelectorAll('.project-stills img, .project-hero-img, .collection-gallery img');
+  const animatableImages = document.querySelectorAll('.project-stills img, .project-hero-img, .collection-gallery img, .about-image img');
   animatableImages.forEach(img => {
     if (!img.classList.contains('scroll-reveal')) {
       img.classList.add('scroll-reveal'); // Agregar clase base
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- 2. Lightbox Functionality ---
-  const stills = document.querySelectorAll('.project-stills img, .collection-gallery img');
+  const stills = document.querySelectorAll('.project-stills img, .collection-gallery img, .about-image img');
 
   if (stills.length > 0) {
     // Crear el overlay
