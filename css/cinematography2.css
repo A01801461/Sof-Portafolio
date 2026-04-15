@@ -45,6 +45,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
+  position: relative;
 }
 
 .project-images .grid-item {
@@ -135,7 +136,20 @@
   }
 
   .project-overlay {
-    display: none;
-    /* Ensure overlay is hidden on mobile */
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    top: auto;
+    height: 12%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 0 1.2rem 1.5rem;
+    pointer-events: auto;
+  }
+
+  .project-overlay-title {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
   }
 }
