@@ -50,9 +50,20 @@ ul {
   list-style: none;
 }
 
-img {
+img,
+audio {
   display: block;
   width: 100%;
+  /* Friction layers: disable long-press and text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
   height: 100%;
   object-fit: cover;
-}
+}

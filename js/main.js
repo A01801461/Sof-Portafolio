@@ -12,10 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelectorAll('.nav-list a');
 
-  // Reload page on site name click
+  // Contextual navigation on site name click
   if (siteName) {
     siteName.addEventListener('click', () => {
-      window.location.reload();
+      const path = window.location.pathname;
+      
+      if (path.includes('/projects/')) {
+        window.location.href = '../index.html';
+      } else if (path.includes('/music/')) {
+        window.location.href = '../music.html';
+      } else if (path.includes('/photography/')) {
+        window.location.href = '../photography.html';
+      } else {
+        window.location.reload();
+      }
     });
   }
 
@@ -132,4 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --- 4. Content Protection (Friction Layers) ---
+  /**
+   * Disables right-click and drag-and-drop strictly for <img> and <audio> elements.
+   * This adds a layer of friction without breaking accessibility on the rest of the site.
+   */
+  const protectedTags = ['IMG', 'AUDIO'];
+
+  // Prevent right-click context menu
+  document.addEventListener('contextmenu', (e) => {
+    if (protectedTags.includes(e.target.tagName)) {
+      e.preventDefault();
+    }
+  }, false);
+
+  // Prevent drag and drop (saves images by dragging to desktop)
+  document.addEventListener('dragstart', (e) => {
+    if (protectedTags.includes(e.target.tagName)) {
+      e.preventDefault();
+    }
+  }, false);
 });
+
