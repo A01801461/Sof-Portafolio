@@ -8,8 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const randomColor = accentColors[Math.floor(Math.random() * accentColors.length)];
   document.documentElement.style.setProperty('--accent-color', randomColor);
 
+  const siteName = document.querySelector('.site-name');
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelectorAll('.nav-list a');
+
+  // Reload page on site name click
+  if (siteName) {
+    siteName.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }
 
   // Toggle mobile menu
   toggle.addEventListener('click', () => {

@@ -111,6 +111,15 @@
     font-size: 1.5rem;
   }
 
+  .collection-description {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .collection-subtitle {
+    font-size: 0.9rem;
+  }
+
   .collection-gallery {
     column-count: 1;
     column-gap: 0;
