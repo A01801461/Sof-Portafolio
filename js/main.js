@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 2. Lightbox Functionality ---
   const stills = document.querySelectorAll('.project-stills img, .collection-gallery img, .about-image img');
+  let currentIndex = 0;
 
   if (stills.length > 0) {
     // Crear el overlay
@@ -81,19 +82,53 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxClose.classList.add('lightbox-close');
     lightboxClose.innerHTML = '&times;';
 
+    // Botones de navegación
+    const prevBtn = document.createElement('button');
+    prevBtn.classList.add('lightbox-prev');
+    prevBtn.innerHTML = '&#10094;'; // Flecha izquierda minimalista
+    prevBtn.ariaLabel = 'Previous image';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.classList.add('lightbox-next');
+    nextBtn.innerHTML = '&#10095;'; // Flecha derecha minimalista
+    nextBtn.ariaLabel = 'Next image';
+
     lightboxOverlay.appendChild(lightboxImg);
     lightboxOverlay.appendChild(lightboxClose);
+    lightboxOverlay.appendChild(prevBtn);
+    lightboxOverlay.appendChild(nextBtn);
     document.body.appendChild(lightboxOverlay);
 
+    // Función para mostrar imagen por índice
+    const showImage = (index) => {
+      if (index < 0) index = stills.length - 1;
+      if (index >= stills.length) index = 0;
+      currentIndex = index;
+
+      const targetImg = stills[currentIndex];
+      lightboxImg.src = targetImg.dataset.highRes || targetImg.src;
+      lightboxImg.alt = targetImg.alt;
+    };
+
     // Abrir lightbox al clickear un still
-    stills.forEach(img => {
+    stills.forEach((img, index) => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
-        lightboxImg.src = img.dataset.highRes || img.src;
-        lightboxImg.alt = img.alt;
+        showImage(index);
         lightboxOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevenir scroll al abrir
       });
+    });
+
+    // Eventos para botones
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(currentIndex + 1);
     });
 
     // Función para cerrar el lightbox
@@ -118,8 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+      if (!lightboxOverlay.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
         closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        showImage(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        showImage(currentIndex + 1);
       }
     });
   }

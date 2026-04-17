@@ -204,3 +204,43 @@
 .lightbox-close:hover {
   color: #ccc;
 }
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 200;
+  cursor: pointer;
+  padding: 2rem;
+  z-index: 10001;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.lightbox-prev {
+  left: 10px;
+}
+
+.lightbox-next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+}
