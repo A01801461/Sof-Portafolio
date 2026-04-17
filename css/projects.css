@@ -223,12 +223,6 @@
   user-select: none;
 }
 
-.lightbox-prev:hover,
-.lightbox-next:hover {
-  opacity: 1;
-  color: #fff;
-}
-
 .lightbox-prev {
   left: 10px;
 }
@@ -238,9 +232,25 @@
 }
 
 @media (max-width: 768px) {
+  .lightbox-overlay {
+    flex-direction: column;
+  }
+
   .lightbox-prev,
   .lightbox-next {
-    font-size: 2rem;
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    font-size: 2.5rem;
     padding: 1rem;
+    opacity: 0.8; /* Mayor visibilidad en móvil al no haber hover */
+  }
+
+  .lightbox-prev {
+    left: 5px;
+  }
+
+  .lightbox-next {
+    right: 5px;
   }
 }

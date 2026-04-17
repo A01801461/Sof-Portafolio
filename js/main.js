@@ -152,6 +152,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Soporte para Swipe (móvil)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightboxOverlay.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxOverlay.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    const handleSwipe = () => {
+      const swipeThreshold = 50; // Mínimo de píxeles para considerar swipe
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left -> Next
+        showImage(currentIndex + 1);
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right -> Prev
+        showImage(currentIndex - 1);
+      }
+    };
+
     document.addEventListener('keydown', (e) => {
       if (!lightboxOverlay.classList.contains('active')) return;
 
