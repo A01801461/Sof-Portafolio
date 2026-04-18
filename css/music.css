@@ -12,7 +12,7 @@
   text-transform: none;
   text-align: center;
   margin-bottom: 3rem;
-  color: #525252;
+  color: var(--accent-color-secondary);
 }
 
 

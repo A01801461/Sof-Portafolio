@@ -5,8 +5,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   // --- 0. Dynamic Color Scheme ---
   const accentColors = ['#4A5A46', '#6F7555', '#6B5448', '#87A19E', '#335765', '#8D623E'];
-  const randomColor = accentColors[Math.floor(Math.random() * accentColors.length)];
-  document.documentElement.style.setProperty('--accent-color', randomColor);
+  const randomColor1 = accentColors[Math.floor(Math.random() * accentColors.length)];
+  let randomColor2 = accentColors[Math.floor(Math.random() * accentColors.length)];
+  
+  // Optional: Ensure they are different if possible
+  if (randomColor1 === randomColor2) {
+    randomColor2 = accentColors[(accentColors.indexOf(randomColor1) + 1) % accentColors.length];
+  }
+
+  document.documentElement.style.setProperty('--accent-color', randomColor1);
+  document.documentElement.style.setProperty('--accent-color-secondary', randomColor2);
 
   const siteName = document.querySelector('.site-name');
   const toggle = document.querySelector('.nav-toggle');

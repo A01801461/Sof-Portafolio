@@ -112,12 +112,16 @@
   }
 
   .collection-description {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
   }
 
   .collection-subtitle {
     font-size: 0.9rem;
+    font-weight: 600;
+    color: #525252;
+    line-height: 1.8;
   }
 
   .collection-gallery {
