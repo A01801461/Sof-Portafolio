@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxClose.classList.add('lightbox-close');
     lightboxClose.innerHTML = '&times;';
 
+    // Contenedor para imagen y controles (para posicionamiento relativo)
+    const lightboxContent = document.createElement('div');
+    lightboxContent.classList.add('lightbox-content');
+
     // Botones de navegación
     const prevBtn = document.createElement('button');
     prevBtn.classList.add('lightbox-prev');
@@ -93,10 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.innerHTML = '&#10095;'; // Flecha derecha minimalista
     nextBtn.ariaLabel = 'Next image';
 
-    lightboxOverlay.appendChild(lightboxImg);
+    lightboxContent.appendChild(lightboxImg);
+    lightboxContent.appendChild(prevBtn);
+    lightboxContent.appendChild(nextBtn);
+
+    lightboxOverlay.appendChild(lightboxContent);
     lightboxOverlay.appendChild(lightboxClose);
-    lightboxOverlay.appendChild(prevBtn);
-    lightboxOverlay.appendChild(nextBtn);
     document.body.appendChild(lightboxOverlay);
 
     // Función para mostrar imagen por índice
