@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     siteName.addEventListener('click', () => {
       const path = window.location.pathname;
       
-      if (path.includes('/projects/')) {
+      if (document.title.includes('404')) {
+        window.location.href = '/index.html';
+      } else if (path.includes('/projects/')) {
         window.location.href = '../index.html';
       } else if (path.includes('/music/')) {
         window.location.href = '../music.html';
