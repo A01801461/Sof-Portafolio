@@ -95,6 +95,15 @@
   margin-bottom: 2rem;
 }
 
+/* propiedades texto about en desktop */
+
+@media (min-width: 769px) {
+  .page-text.about-text {
+    font-size: 1.05rem;
+    font-weight: 400;
+  }
+}
+
 .contact-link {
   display: inline-block;
   font-size: 1rem;

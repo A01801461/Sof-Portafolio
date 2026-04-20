@@ -81,3 +81,10 @@
     max-width: 100%;
   }
 }
+
+@media (min-width: 769px) {
+  .page-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}

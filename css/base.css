@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 /* ================================================
    Sofía Abud — Portfolio Base Stylesheet
    ================================================ */
@@ -25,7 +27,7 @@ html {
 body {
   background-color: #ffffff;
   color: #1a1a1a;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   min-height: 100vh;
 }

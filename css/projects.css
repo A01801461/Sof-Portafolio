@@ -50,7 +50,7 @@
 }
 
 .project-meta-desc {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.12em;
   color: #313131;
   margin-bottom: 0;
@@ -124,6 +124,7 @@
 
   .project-meta-desc {
     font-size: 0.9rem;
+    font-weight: 400; /* Para mantener la apariencia original en móvil con la nueva fuente */
   }
 
   .project-meta-credits {
