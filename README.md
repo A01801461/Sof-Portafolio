@@ -35,12 +35,6 @@ Professional portfolio website for **Sofía Abud**, a Mexican cinematographer, p
 └── about.html          # Artist Bio & Contact
 ```
 
-## 🛠️ Custom Tools
-
-The project includes custom scripts for asset management:
-- **`assets/converter.py`**: A Python-based image processing tool that converts raw JPEGs/PNGs into dual-resolution WebP files. It applies specific compression and resolution targets for cinematography vs. photography projects.
-- **`assets/compress_audio.py`**: A utility for optimizing large audio WAV files.
-
 ## ✉️ Contact
 
 - **Website:** [sofiaabud.com](https://sofiaabud.com)
