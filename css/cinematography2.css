@@ -71,6 +71,16 @@
   transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
+.project-section.preserve-ratio .grid-item {
+  aspect-ratio: auto;
+}
+
+.project-section.preserve-ratio .grid-item img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
 .project-section:hover .grid-item img {
   transform: scale(1.03);
   opacity: 1;

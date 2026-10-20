@@ -88,6 +88,15 @@
   aspect-ratio: 4 / 3;
 }
 
+/* Preserve the source framing for projects with other aspect ratios. */
+.project-detail.preserve-ratio .project-hero-img,
+.project-detail.preserve-ratio .project-stills img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  align-self: start;
+}
+
 .project-back {
   display: inline-block;
   margin-top: 3rem;

@@ -35,6 +35,14 @@ Professional portfolio website for **Sofía Abud**, a Mexican cinematographer, p
 └── about.html          # Artist Bio & Contact
 ```
 
+## Image preparation — Chicomecoatl and The Barn
+
+- Matching filenames live under `assets/img/{std,high}/photography/chicomecoatl/CH1.webp`–`CH7.webp` and `assets/img/{std,high}/cinematography/TB/TB1.webp`–`TB17.webp`. Image 1 is each project's supplied cover.
+- `high` preserves the original pixel dimensions, with WebP quality 95. `std` generally uses WebP quality 82; CH2 uses quality 95, matching the documented `high` setting, and is resized directly from `high`. Standard images use approximately half the original width and height, with rounding to whole pixels where needed. Both variants retain embedded colour profiles when present.
+- The Barn uses 4096 × 2160 for `high` and 2048 × 1080 for `std`. Chicomecoatl has mixed original dimensions; CH1 (2227 × 1782) retains its dimensions in `std`. CH2 uses 2783 × 3411 for `high` and 1392 × 1706 for `std`, approximately half the width and height with rounding to whole pixels and no cropping.
+- WebP conversion preserves the full image framing without cropping, stretching or enlarging. The galleries show natural aspect ratios. Chicomecoatl's photography card uses a centred 4:3 crop to trim a little from the top and bottom; both new project cards use the site's standard hover zoom.
+- The Barn's gallery order is dungeon and other interiors (TB1–TB6, TB16–TB17), blue control room (TB7–TB9), then greens and exteriors (TB10–TB15), with no empty cells between groups. The cinematography card shows one still from each group (TB1, TB7, TB15).
+
 ## ✉️ Contact
 
 - **Website:** [sofiaabud.com](https://sofiaabud.com)

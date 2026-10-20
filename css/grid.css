@@ -129,6 +129,11 @@
   opacity: 0.75;
 }
 
+.photo-item.chicomecoatl-cover {
+  aspect-ratio: 4 / 3;
+  align-self: start;
+}
+
 .photo-item .photo-overlay {
   position: absolute;
   inset: 0;
