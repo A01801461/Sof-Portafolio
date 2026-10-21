@@ -129,9 +129,9 @@
   opacity: 0.75;
 }
 
-.photo-item.chicomecoatl-cover {
-  aspect-ratio: 4 / 3;
-  align-self: start;
+.photo-item.chicomecoatl-cover img {
+  /* Keep the former 4:3 top crop; take the extra 3:2 crop from the bottom. */
+  object-position: center 18.8%;
 }
 
 .photo-item .photo-overlay {
